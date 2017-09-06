@@ -1,11 +1,11 @@
 package main
 
-func main() {
-	cards := deck{"Ace of Spades", newCard()}
-	cards = append(cards, "Six of Spades")
-	cards.print()
-}
+type color string
 
-func newCard() string {
-	return "Five of Diamonds"
+func main() {
+	cards := newDeck()
+
+	hand, rest := deal(cards, 5)
+	hand.print()
+	rest.print()
 }
