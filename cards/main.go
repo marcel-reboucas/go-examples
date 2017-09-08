@@ -4,8 +4,9 @@ type color string
 
 func main() {
 	cards := newDeck()
+	cards.saveToFile("my_cards")
+	newDeckFromFile("my_cards")
 
-	hand, rest := deal(cards, 5)
-	hand.print()
-	rest.print()
+	cards.shuffle()
+	cards.print()
 }
